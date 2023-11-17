@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe Card do
+describe Card do
   let (:card) { Card.new('What is the capital of Alaska?', 'Juneau', :Geography) }
   let (:card_2) { Card.new('Which planet is closest to the Sun?', 'Mercury', :STEM) }
 
