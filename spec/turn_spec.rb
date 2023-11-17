@@ -2,10 +2,10 @@ require 'spec_helper'
 
 describe Turn do
   let (:card_1) { Card.new('What is the capital of Alaska?', 'Juneau', :Geography) }
-  let (:turn_w_win) { Turn.new('Juneau', card) }
+  let (:turn_w_win) { Turn.new('Juneau', card_1) }
 
   let (:card_2) { Card.new('Which planet is closest to the Sun?', 'Mercury', :STEM) }
-  let (:turn_w_lose) { Turn.new('Mars', card) }
+  let (:turn_w_lose) { Turn.new('Mars', card_2) }
 
   it 'exists' do
     expect(turn_w_win).to be_instance_of(Turn)
@@ -14,7 +14,7 @@ describe Turn do
 
   it 'has a guess' do
     expect(turn_w_win.guess).to eq('Juneau')
-    expect(turn_w_lose.guess).to eq('Anchorage')
+    expect(turn_w_lose.guess).to eq('Mars')
   end
 
   it 'has a card' do
