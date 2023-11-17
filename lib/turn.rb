@@ -6,5 +6,4 @@ class Turn
     @guess = guess
     @card = card
   end
-
 end
