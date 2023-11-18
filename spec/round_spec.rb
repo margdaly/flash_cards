@@ -12,7 +12,7 @@ describe Round do
       expect(round).to be_instance_of(Round)
     end
 
-    it 'is initialized with a deck' do
+    it 'starts with a deck' do
       expect(round.deck).to eq(deck)
     end
 
