@@ -29,6 +29,26 @@ describe Round do
   end
 
   describe 'taking turns' do
+    let (:new_turn) { round.take_turn('HyperText Markup Language') }
     
+    it 'records a guess and creates a new turn' do
+      expect(new_turn).to be_instance_of(Turn)
+      expect(new_turn.guess).to eq('HyperText Markup Language')
+      expect(new_turn.card).to eq(card_1)
+      expect(round.turns).to eq([new_turn])
+    end
+
+    it 'records if the turn was correct' do
+      expect(new_turn.correct?).to be(true)
+      expect(round.number_correct).to eq(1)
+    end
+
+    it 'returns feedback for the turn' do
+      expect(round.last_turn_feedback).to eq('Correct!')
+    end
+
+    it 'returns the next card in the deck as the current card' do
+      expect(round.current_card).to eq(card_2)
+    end
   end
 end
