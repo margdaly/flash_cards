@@ -22,6 +22,6 @@ describe Deck do
   it 'returns cards for a given category' do
     expect(deck.cards_in_category(:STEM)).to eq([card_1, card_3])
     expect(deck.cards_in_category(:Geography)).to eq([card_2])
-    expect(deck.cards_in_category('History')).to eq([])
+    expect(deck.cards_in_category(:History)).to eq([])
   end
 end
