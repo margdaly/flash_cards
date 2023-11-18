@@ -25,7 +25,6 @@ describe Round do
     it 'returns the first card in the deck as the current card' do
       expect(round.current_card).to eq(card_1)
       expect(round.current_card).to be_instance_of(Card)
-      expect(round.current_card).to eq(deck.first)
     end
   end
 
