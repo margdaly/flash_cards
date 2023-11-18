@@ -15,5 +15,9 @@ describe Round do
     it 'is initialized with a deck' do
       expect(round.deck).to eq(deck)
     end
+
+    it 'starts with an empty array of turns' do
+      expect(round.turns).to be_empty
+    end
   end
 end
