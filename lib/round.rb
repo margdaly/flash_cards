@@ -33,4 +33,12 @@ class Round
   def last_turn_feedback
     @turns.last.feedback
   end
+
+  def percent_correct
+    (number_correct.to_f / @turns.count * 100).round(1)
+  end
+
+  def percent_correct_by_category(category)
+    (number_correct_by_category(category).to_f / @turns.count { |turn| turn.card.category == category } * 100).round(1)
+  end
 end
