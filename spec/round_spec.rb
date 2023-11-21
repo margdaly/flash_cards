@@ -78,5 +78,9 @@ describe Round do
       expect(round.percent_correct_by_category(:STEM)).to eq(100.0)
       expect(round.percent_correct_by_category(:Geography)).to eq(0.0)
     end
+
+    it 'returns "No more cards" when there are no more cards' do
+      expect(round.current_card).to eq('No more cards')
+    end
   end
 end
