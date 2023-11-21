@@ -11,6 +11,7 @@ class Round
     @turns = []
   end
 
+  # current_card will return the first card in the deck
   def current_card
     if @deck.cards != []
       @deck.cards.first
@@ -19,6 +20,8 @@ class Round
     end
   end
 
+  # take_turn will take a string as an argument
+  # and the deck's first card as the second argument
   def take_turn(guess)
     turn = Turn.new(guess, current_card)
     @turns << turn
