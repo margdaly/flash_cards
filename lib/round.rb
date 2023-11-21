@@ -12,7 +12,11 @@ class Round
   end
 
   def current_card
-    @deck.cards.first
+    if @deck.cards != []
+      @deck.cards.first
+    else 
+      "No more cards"
+    end
   end
 
   def take_turn(guess)
