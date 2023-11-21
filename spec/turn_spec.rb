@@ -22,9 +22,16 @@ describe Turn do
     expect(turn_w_lose.card).to eq(card_2)
   end
 
-  it 'can determine if the guess is correct' do
-    expect(turn_w_win.correct?).to eq(true)
-    expect(turn_w_lose.correct?).to eq(false)
+  describe '#correct?' do
+    it 'can determine if the guess is correct' do
+      expect(turn_w_win.correct?).to eq(true)
+      expect(turn_w_lose.correct?).to eq(false)
+    end
+
+    it 'is case insensitive' do
+      turn = Turn.new('juneau', card_1)
+      expect(turn.correct?).to eq(true)
+    end
   end
 
   it 'can give feedback' do
